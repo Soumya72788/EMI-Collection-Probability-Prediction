@@ -1,0 +1,100 @@
+Analysis of N_Default_L3m:
+- Likelihood Score: 8/10
+- Analysis: The number of defaults in the last 3 months shows a strong correlation with the "Target_Flag," indicating the likelihood of future defaults. Customers with more defaults are more likely to have a "Target_Flag" of 1, suggesting a higher risk of not paying the EMI in the next month. This factor has a significant influence on predicting defaulters, as evidenced by the clear trend.
+
+
+Analysis of Branch Code:
+- Likelihood Score: 2/10
+- Analysis: The distribution of target flags across different branches shows no significant variation. It suggests that the branch code is not a strong predictor of whether a customer is likely to default in the next month. The score is low because this factor does not seem to have a substantial influence on predicting defaulters.
+
+
+Analysis of Max Utilization:
+- Likelihood Score: 7/10
+- Analysis: Max Utilization shows interesting insights, with peaks at specific values (e.g., 55, 65, 75, 88, and 100) indicating that customers with these utilization levels are more likely to have a "Target_Flag" of 1, signifying a higher likelihood of future defaults. However, there is some variability in the number of customers with Target_Flag = 1 across different Max Utilization values. While this factor appears to be a reasonable predictor of default risk, it may not be as strong as other factors like N_Default_L3m. Further analysis is needed to determine its exact predictive power.
+
+
+Analysis of Max_Perc_Def_Chg_Pending:
+- Likelihood Score: 8/10
+- Analysis: Max_Perc_Def_Chg_Pending represents the maximum percentage change in default status pending from the previous month. The analysis indicates that higher values, particularly at 100, are strongly associated with a higher likelihood of customers being classified as defaulters in the next month. The distribution and relationship with Target_Flag highlight the potential significance of this factor in credit risk assessment. However, further statistical analysis would be beneficial to assess its precise predictive power and to consider potential confounding variables.
+
+
+Analysis of N_Family_Member:
+- Likelihood Score: 4/10
+- Analysis: N_Family_Member represents the number of family members associated with each customer. The analysis shows that while there is a variation in the count of customers with Target_Flag = 1 across different family sizes, the consistent percentage of defaults suggests that family size alone may not be a strong predictor of credit risk. Other factors not considered in this analysis could have a more significant influence on default risk. In summary, family size, as represented in this dataset, may not be a clear indicator of a person going into default. Further analysis, considering other relevant factors, is necessary to better understand the predictors of credit risk.
+
+
+Analysis of Max_Ratio_OC_Pending_POS:
+- Likelihood Score: 6/10
+- Analysis: The analysis suggests that Max_Ratio_OC_Pending_POS may play a role in predicting future defaults, with lower values of this variable being associated with a higher likelihood of customers being classified as defaulters in the next month. However, it's important to note that this relationship is not necessarily causal, and other factors may also influence the likelihood of default. Further investigation and statistical analysis would be required to establish a clearer understanding of the relationship between Max_Ratio_OC_Pending_POS and credit risk.
+
+
+Analysis of N_PosBkt_L3m with Target_Flag:
+- Likelihood Score: 4/10
+- Analysis: The dataset shows an unexpected relationship between the variable N_PosBkt_L3m (representing the number of times a customer consecutively defaulted in the last 3 months) and Target_Flag (indicating the likelihood of future defaults). Specifically, it suggests that customers who have not consecutively defaulted in the last 3 months (i.e., N_PosBkt_L3m = 0) are more likely to have Target_Flag = 1, which signifies a higher likelihood of future defaults. However, this observation may not align with conventional credit risk assessment practices in the real world. In standard credit risk assessment, customers who have recently experienced consecutive defaults are generally considered higher risk, with a higher likelihood of defaulting again in the near future. Therefore, this analysis raises questions about the validity of the N_PosBkt_L3m variable as a predictor of credit risk, and further investigation is needed.
+
+
+Analysis of CoAP Income and Target_Flag:
+- Likelihood Score: 2/10
+- Analysis: CoAP Income does not appear to have a straightforward or strong relationship with the Target_Flag. While there is a subset of customers with CoAP Income equal to 60,000 who have Target_Flag equal to 1, this relationship is not conclusive, and the data is complicated by the prevalence of null values and zeros in the CoAP Income field. Other factors not considered in this analysis may have a more significant impact on credit risk assessment. Therefore, CoAP Income alone does not seem to be a solid predictor of a customer's likelihood of becoming a defaulter. A more comprehensive analysis that considers multiple variables and potentially verifies the income data would be necessary to draw more robust conclusions regarding credit risk.
+
+Analysis of Ever_Default_L12M:
+- Likelihood Score: 7/10
+- Analysis: The Ever_Default_L12M variable indicates whether a customer has ever defaulted in the last 12 months, with "Yes" and "No" categories. Customers who have experienced defaults in the last 12 months ("Yes" category) show a higher count of Target_Flag = 1. This suggests that a history of recent defaults may be associated with a higher likelihood of becoming a defaulter in the next month. However, it's essential to recognize that having no recent defaults ("No" category) does not guarantee immunity from future defaults, as there are still some customers in this category with Target_Flag = 1. Ever_Default_L12M can be a useful feature in predicting credit risk, but it should be considered in conjunction with other relevant variables for a more accurate assessment.
+
+Analysis of Perc_Paymode_Online:
+- Likelihood Score: 6/10
+- Analysis: The bar graph that counts the number of customers with Target_Flag = 1 for different values of Perc_Paymode_Online provides insights. There is a concentration of defaulters among customers with Perc_Paymode_Online value of 0, indicating that customers who do not use online payment methods have a relatively higher likelihood of being classified as defaulters in the next month. However, the relationship between online payment percentages and default risk is not linear. Various values of Perc_Paymode_Online have associated defaulters, highlighting the complexity of factors contributing to credit risk. While this variable provides some predictive power, it should be considered alongside other variables for a comprehensive credit risk assessment.
+
+Analysis of Perc_Repay_Fail:
+- Likelihood Score: 7/10
+- Analysis: The bar graph represents the count of customers with Target_Flag equal to 1 for various non-zero values of Perc_Repay_Fail within the range of 0 to 1. Certain values of Perc_Repay_Fail have a higher concentration of customers with Target_Flag equal to 1, suggesting a non-linear relationship between this variable and the likelihood of becoming a defaulter. Some values have a higher count of defaulters, indicating a moderate to high level of risk, while others have fewer defaulters. Threshold effects may exist within the range of Perc_Repay_Fail. Further statistical analysis is needed to better understand this non-linear relationship and its significance in credit risk assessment. This variable shows promise but requires more in-depth exploration.
+
+Analysis of Max_DPD_L3m:
+- Likelihood Score: 9/10
+- Analysis: When analyzing the Max_DPD_L3m variable, it's observed that, except for the value zero, all other values follow a clear linear trend. Specifically, as the value of Max_DPD_L3m increases, the count of customers with Target_Flag = 1 (indicating a higher likelihood of being classified as a defaulter in the next month) also increases steadily. This linear relationship suggests that there is a strong association between higher Max_DPD_L3m values and a higher likelihood of default. In real-life credit risk assessment, this finding aligns with common practices where customers with a history of delayed payments or higher DPD (Days Past Due) values are considered to be at a greater risk of defaulting on their credit obligations. However, it's important to note that this relationship is not necessarily causal, and other factors may contribute to the observed trend. Therefore, Max_DPD_L3m can be considered a significant predictor of credit risk, especially when it deviates from the value zero.
+
+
+Analysis of Perc_Paymode_Cheq_Fail:
+- Likelihood Score: 7/10
+- Analysis: The dataset includes various values for Perc_Paymode_Cheq_Fail, representing the percentage of failed payments through cheque mode for customers. For certain values of Perc_Paymode_Cheq_Fail, there is a higher concentration of customers with Target_Flag = 1, indicating a higher likelihood of default. Specifically, values around 0.5, 0.589, 0.6, 0.66, and 0.75 show increased default ratios, suggesting a moderate to high level of risk. However, the relationship is not linear, and various values, including non-zero ones, have associated defaulters, indicating a non-linear relationship between online payment percentages and default risk. This complexity suggests that while Perc_Paymode_Cheq_Fail may be a predictor of credit risk, it is not the only factor at play. Other variables and factors may also influence credit risk assessment.
+
+
+Analysis of Age:
+- Likelihood Score: 7/10
+- Analysis: When analyzing the relationship between Age and credit risk (Target_Flag = 1), it's observed that most age values follow a trend: younger customers are more likely to be classified as defaulters, while older customers are less likely to default. However, there is an exception noted for the age value of 21, where a higher number of customers are classified as defaulters. This exception could be due to specific factors related to customers of that age group or data anomalies. The general trend suggests that age can be a significant predictor of credit risk, with younger customers having a higher likelihood of being classified as defaulters. This aligns with common industry practices, where younger individuals might have less credit history and stability, making them riskier borrowers. Older customers, on the other hand, tend to have more established financial histories and are less likely to default.
+
+
+Analysis of Total_Field_Trails:
+- Likelihood Score: 6/10
+- Analysis: The Total_Field_Trails variable represents the number of field visits made by customers. In the analysis, null values were systematically replaced with zero, assuming that nulls indicate zero visits. This replacement was made to facilitate a more comprehensive understanding of the data. The analysis reveals a notable trend in the relationship between the number of field visits (inclusive of the artificial value zero) and the Target_Flag, which indicates customers likely to default in the next month: Customers with zero field visits have a substantial count with Target_Flag equal to 1, indicating a higher likelihood of default. This suggests that customers who have not made any field visits are at increased risk. As the number of field visits increases from zero to higher values (e.g., 1, 2, 3), the count of customers with Target_Flag equal to 1 decreases progressively. This suggests a potential inverse relationship between the number of field visits and the likelihood of default. These findings indicate that, in this dataset, customers who have not made any field visits (or have very few) may be at a higher risk of default compared to those who have made field visits. In conclusion, Total_Field_Trails, with null values replaced by zero, appears to be a potentially valuable predictor of credit risk, particularly in identifying customers with zero field visits as a higher-risk group.
+
+
+Analysis of Total_Resolved:
+- Likelihood Score: 5/10
+- Analysis: The Total_Resolved variable represents the number of issues or cases resolved by customers. The analysis of this variable, with null values systematically replaced by zero, provides insights into its potential relationship with credit risk (Target_Flag = 1). Observations: Null Value Handling: Null values in Total_Resolved were filled with zero, assuming that nulls indicate zero issues resolved. This approach was adopted to facilitate analysis but should be interpreted with caution. Inverse Relationship: The analysis suggests an inverse relationship between the number of issues resolved and the likelihood of default: Customers with higher counts of issues resolved are less likely to have Target_Flag = 1, indicating a lower risk of default. This pattern aligns with common expectations, as customers who actively engage with resolving issues may have better credit management practices. Conversely, customers with fewer or no issues resolved (artificially set as zero) tend to have a higher count with Target_Flag = 1, implying a higher risk of default. Limitations of Null Value Handling: It's important to acknowledge that the way null values are handled significantly affects the analysis. When null values were neglected instead of replaced with zero, a different pattern emerged, with the highest count of default customers at Total_Resolved values of 1, followed by 0 and then 2 and 3. This highlights the sensitivity of the analysis to null value treatment. Conclusion: The analysis suggests that Total_Resolved, with null values replaced by zero, may be indicative of credit risk. Customers who have resolved a higher number of issues appear to have a lower likelihood of default, while those with fewer or no issues resolved may be at a higher risk. However, the handling of null values has a significant impact on the analysis, and further investigation is needed to understand the relationship more comprehensively.
+
+
+Analysis of N_Enq_L9m:
+- Likelihood Score: 6/10
+- Analysis: The N_Enq_L9m variable represents the number of inquiries made by customers about new loans within the last 9 months. The analysis of this variable reveals important insights related to credit risk: Exponential Decreasing Curve: The bar graph displaying the count of customers with Target_Flag = 1 for different values of N_Enq_L9m demonstrates an exponential decreasing curve. This pattern indicates that as the number of inquiries about new loans increases, the count of customers with a Target_Flag equal to 1 decreases exponentially. Inquiries and Credit Risk: The observed trend suggests that customers who make fewer inquiries about new loans within the last 9 months are more likely to have Target_Flag = 1, which signifies a higher likelihood of future default. In contrast, customers who inquire more frequently about new loans are less likely to be classified as defaulters. Credit Risk Indicator: In the context of credit risk assessment, a higher number of recent loan inquiries is often associated with a lower level of credit risk. This is because customers actively seeking new loans may be viewed as financially stable and less likely to default. Conversely, customers who are not actively seeking new loans may be considered at higher risk. In conclusion, N_Enq_L9m appears to be a valuable predictor of credit risk. Customers who make fewer inquiries about new loans within the last 9 months are more likely to be classified as defaulters, while those with a higher number of inquiries exhibit a lower likelihood of default.
+
+Analysis of Max_Loan_Balance_Others:
+- Likelihood Score: 7/10
+- Analysis: Based on the analysis of Max_Loan_Balance_Others, a notable trend is observed. Specifically, when considering customers with a Max_Loan_Balance_Others greater than 20,000 (i.e., excluding the 0-20k range), it appears that customers with higher loan balances taken from sources other than IDFC are more likely to be classified as defaulters (Target_Flag = 1). In other words, there seems to be an association between higher external loan balances and an increased likelihood of default. However, it's essential to interpret this trend with caution and consider other factors. This relationship does not necessarily imply causation, and various variables can influence credit risk. Further statistical analysis and modeling are needed to confirm the strength and significance of this relationship and to identify the most critical factors affecting credit risk. In summary, Max_Loan_Balance_Others, when excluding the 0-20k range, appears to be a potential predictor of credit risk, with higher loan balances from external sources suggesting a higher likelihood of future defaults. However, this is a preliminary observation, and a comprehensive credit risk assessment would require a more in-depth analysis of multiple variables and their interactions.
+
+
+Analysis of Work Experience (N_WorkEx_Yr) and Target_Flag:
+
+- Likelihood Score: 7/10
+
+Work experience is associated with credit risk:
+
+- Low Work Experience (0-7 years): Customers with limited experience (0-7 years) are more likely to have Target_Flag = 1, indicating a higher default risk.
+
+- Moderate Work Experience (8-10 years): Moderate experience (8-10 years) corresponds to a moderate default risk.
+
+- Higher Work Experience (11-19 years): More experience (11-19 years) indicates a lower default risk.
+
+- Special Cases (0 and 1 years): Customers with 0 or 1 year of experience have a higher default risk, likely due to limited financial stability.
+
+Overall, work experience is a moderate predictor of credit risk. Other factors should be considered for a comprehensive assessment.
